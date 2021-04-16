@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+# Version: 1.0.0
+
+__author__ = 'John Lampe'
+__email__ = 'dmitry.chan@gmail.com'
+
 import argparse
 from tmobileClass import tmobile
 import pdb
