@@ -1,0 +1,23 @@
+really need to figure out the OS here...it speaks NETBIOS, but it *feels* like *nix
+
+nmap all TCP and UDP ports (may crash device...do this during the night)
+  - nmap OS scan? 
+
+Brute crawl and find hidden directories/files (also may crash server...)
+  - perhaps use this info to guess at the webserver? we need to know the webserver and it doesn't pass a SERVER field
+  - parse through all HTML, image, JS, etc files and use as clues to figure out webserver/OS. See what meta data is in the images...
+    - look at HTML or JS comments
+  - google search for the files to try to figure out the underlying webserver/OS
+
+Find all the POST pages and think about ways to break/inject/whatever 
+
+Since it broadcasts NETBIOS, let's try to talk back to it and see where this leads
+
+Does it speak SSDP?
+
+Lots of .js files...download them 1) look for opensource projects and 2) run code through static code analyzer
+
+Full scan on external interface using the IPv6 addr...find ports that may be used for management
+
+physically look at the device and see if there are any config ports or interfaces that may allow me to boot into a terminal mode????
+
