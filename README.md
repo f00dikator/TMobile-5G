@@ -25,6 +25,8 @@ optional arguments:
   -d, --data_fields     Show the different form fields and their expected format
   
   -a, --all             Grabs *all* of the config/stats (can be a lot of data)
+  
+  -f, --find_links      find valid CGI/JS endpoints
 
 
 
