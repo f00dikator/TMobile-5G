@@ -1,0 +1,9 @@
+Nmap scan report for 192.168.12.1
+Host is up (0.0022s latency).
+Not shown: 65532 closed ports
+PORT     STATE SERVICE
+53/tcp   open  domain
+80/tcp   open  http
+8099/tcp open  unknown
+MAC Address: 0C:7C:28:F2:73:AA (Unknown)
+
