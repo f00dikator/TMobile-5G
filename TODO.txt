@@ -6,6 +6,26 @@ DONE Perhaps a hint at https://cvs.opengroup.org/cgi-bin/viewcvs.cgi/*checkout*/
 
 DONE nmap all TCP and UDP ports (may crash device...do this during the night)
   - nmap OS scan came back as Linux/OpenWRT 
+  - httprecon came back as winblows
+   * httprecon 7.3 Report
+Target: http://192.168.12.1:80
+Tests: 9 test cases
+Auditor: johnl
+Scan: 4/17/2021 - 6:23:00 PM
+Export: 4/17/2021 - 6:23:45 PM
+
+1. CONTENTS
+
+* Summary
+* Matches
+* Responses
+* Details
+
+2. SUMMARY
+
+An advanced web server fingerprinting for the host 192.168.12.1 and port tcp/80 was done with 9 test cases at 4/17/2021 6:23:00 PM.
+
+This analysis was able to determine the target httpd service as Microsoft IIS 6.0 with 68 fingerprint hits in the database.
   
 TCP port 8099 is open and *appears* to be a webserver supporting only HTTP/1.0
  - DIG INTO THIS MORE!
