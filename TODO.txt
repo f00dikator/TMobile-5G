@@ -4,6 +4,9 @@ really need to figure out the OS here...it speaks NETBIOS, but it *feels* like *
 
 nmap all TCP and UDP ports (may crash device...do this during the night)
   - nmap OS scan? 
+  
+TCP port 8099 is open and *appears* to be a webserver supporting only HTTP/1.0
+ - DIG INTO THIS MORE!
 
 Brute crawl and find hidden directories/files (also may crash server...)
   - perhaps use this info to guess at the webserver? we need to know the webserver and it doesn't pass a SERVER field
