@@ -75,9 +75,25 @@ class tmobile:
             "radio_config_status_web_app.cgi",
             "multi_apn_status_web_app.cgi",
             "multi_apn_delete_web_app.cgi",
-            "multi_apn_config_web_app.cgi"
+            "multi_apn_config_web_app.cgi",
+            "jsencrypt.min.js",
+            "sjcl.js",
+            "crypto_page.js",
+            "runtime-es2015.1eba213af0b233498d9d.js",
+            "jsencrypt.min.js",
+            "sjcl.js",
+            "crypto_page.js",
+            "runtime-es2015.1eba213af0b233498d9d.js",
+            "jsencrypt.min.js",
+            "sjcl.js",
+            "crypto_page.js",
+            "runtime-es2015.1eba213af0b233498d9d.js",
+            "jsencrypt.min.js",
+            "sjcl.js",
+            "crypto_page.js",
+            "runtime-es2015.1eba213af0b233498d9d.js"
             ]
-        self.cgi_dirs = ["/web_whw/", "/cgi-bin/", "/"]
+        self.cgi_dirs = ["/web_whw/", "/cgi-bin/", "/app-root/", "/assets/", "/assets/js/", "/"]
 
     def find_cgi_locations(self):
         for dirs in self.cgi_dirs:
