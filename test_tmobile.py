@@ -82,7 +82,7 @@ if __name__ == '__main__':
                         help='Show the different form fields and their expected format')
     parser.add_argument('-a', '--all', action='store_true', dest='show_all',
                         help='Grabs *all* of the config/stats (can be a lot of data)')
-    parser.add_argument('-f', '--find_links', action='store_true', dest='find_links', help='find valid CGI endpoints')
+    parser.add_argument('-f', '--find_links', action='store_true', dest='find_links', help='find valid CGI/JS endpoints')
 
     parser.set_defaults(verbosity=False)
 
