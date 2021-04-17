@@ -2,10 +2,10 @@ really need to figure out the OS here...it speaks NETBIOS, but it *feels* like *
   ***Seems to be a stripped down version of https://wifi-helpcenter.nokia.com/hc/en-us/articles/360034143793-Nokia-WiFi-Web-GUI***
   ***See if we can find an admin guide for that Nokia WiFi***
 
-Perhaps a hint at https://cvs.opengroup.org/cgi-bin/viewcvs.cgi/*checkout*/pegasus/README.html?rev=1.7.14.1
+DONE Perhaps a hint at https://cvs.opengroup.org/cgi-bin/viewcvs.cgi/*checkout*/pegasus/README.html?rev=1.7.14.1
 
-nmap all TCP and UDP ports (may crash device...do this during the night)
-  - nmap OS scan? 
+DONE nmap all TCP and UDP ports (may crash device...do this during the night)
+  - nmap OS scan came back as Linux/OpenWRT 
   
 TCP port 8099 is open and *appears* to be a webserver supporting only HTTP/1.0
  - DIG INTO THIS MORE!
