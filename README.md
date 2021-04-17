@@ -4,7 +4,7 @@ WHere I'm gonna store all my TMobile 5G gateway scripts and such.
 Recon:
 
 python3 test_tmobile.py -i 192.168.12.1 -h
-usage: test_tmobile.py [-h] [-v] [-i IP_ADDRESS] [-l] [-w] [-c] [-d] [-a]
+usage: test_tmobile.py [-h] [-v] [-i IP_ADDRESS] [-l] [-w] [-c] [-d] [-a] [-f]
 
 Performs Recon on the T-Mobile Internet Gateway 4G/5G device
 
