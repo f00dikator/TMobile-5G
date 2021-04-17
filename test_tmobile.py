@@ -1,11 +1,6 @@
-# -*- coding: utf-8 -*-
-# Version: 1.0.0
-
-__author__ = 'John Lampe'
-__email__ = 'dmitry.chan@gmail.com'
-
 import argparse
 from tmobileClass import tmobile
+import socket
 import pdb
 
 def main(t_session):
@@ -14,6 +9,14 @@ def main(t_session):
     :param t_session: tmobile session object
     :return: None
     """
+    if not check_tcp_port(args.ip_address, 80):
+        print("Port 80 is not open on {}. Exiting".format(args.ip_address))
+        exit(0)
+    else:
+        print("Port 80 is open. Continuing")
+
+    if args.find_links:
+        t_session.find_cgi_locations()
 
     if args.show_all:
         t_session.show_all()
@@ -31,6 +34,41 @@ def main(t_session):
     if args.data_fields:
         t_session.data_fields()
 
+def check_tcp_port(ip, port):
+    """
+    check a TCP port to see if it's open or closed
+    :param ip: string IP address
+    :param port: integer port number
+    :return: boolean
+    """
+    ret = False
+    port = int(port)
+    try:
+        a_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    except Exception as e:
+        print("Failed to initialize a socket. Error: {}".format(e))
+        return ret
+
+    location = (ip, port)
+
+    try:
+        ret = a_socket.connect_ex(location)
+    except Exception as e:
+        print("Failed to connect out to remote host {}. Error: {}".format(ip, e))
+        return ret
+
+    if ret == 0:
+        ret = True
+    else:
+        ret = False
+
+    try:
+        a_socket.close()
+    except Exception as e:
+        print("Failed to close socket (ruh roh). Error: {}".format(e))
+
+    return ret
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Performs Recon on the T-Mobile Internet Gateway 4G/5G device')
@@ -44,6 +82,7 @@ if __name__ == '__main__':
                         help='Show the different form fields and their expected format')
     parser.add_argument('-a', '--all', action='store_true', dest='show_all',
                         help='Grabs *all* of the config/stats (can be a lot of data)')
+    parser.add_argument('-f', '--find_links', action='store_true', dest='find_links', help='find valid CGI endpoints')
 
     parser.set_defaults(verbosity=False)
 
