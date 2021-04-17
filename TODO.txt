@@ -1,4 +1,6 @@
 really need to figure out the OS here...it speaks NETBIOS, but it *feels* like *nix
+  ***Seems to be a stripped down version of https://wifi-helpcenter.nokia.com/hc/en-us/articles/360034143793-Nokia-WiFi-Web-GUI***
+  ***See if we can find an admin guide for that Nokia WiFi***
 
 nmap all TCP and UDP ports (may crash device...do this during the night)
   - nmap OS scan? 
