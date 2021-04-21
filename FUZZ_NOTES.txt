@@ -5,6 +5,7 @@ GET requests URI
   - same goes if we encode to %<INT>. e.g. GET /whatever.cgi?lan%129<ETC> is read just as GET /whatever.cgi?lan
   - garbage is filtered out before the request is processed...e.g. ?<garbage>lan or ?lan<garbage> is identical response...garbage is filtered out then the request is processed
   - So, we can get around any IDS-ey type sigs by doing GET /whatever.cgi?<garbage>l<garbage>a<garbage>n<garbage> etc.
+  - NOTE: THIS ONLY APPLIES TO THE ARGS TO THE RIGHT OF '?'....you can't insert garbage into the file name...only the parameters
   
   
   
