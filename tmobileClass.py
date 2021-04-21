@@ -9,9 +9,10 @@ import pdb
 
 
 class tmobile:
-    def __init__(self, ip, verify=False):
+    def __init__(self, ip, port, verify=False):
         self.ip = ip
-        self.base_url = "http://{}".format(ip)
+        self.port = port
+        self.base_url = "http://{}:{}".format(ip, port)
         self.session = requests.Session()
         self.session.verify = verify
         self.session.headers = {"Content-Type": "application/x-www-form-urlencoded",
@@ -20,6 +21,20 @@ class tmobile:
                                 "Referer": "{}/web_whw".format(self.base_url),
                                 "Accept-Encoding": "gzip, deflate"}
         self.load_cgis()
+
+    def get_page(self, url):
+        """
+        generic GET
+        :param url: string url
+        :return: status_code, (requests-response|error string)
+        """
+        try:
+            ret = self.session.get("{}/{}".format(self.base_url, url))
+            return ret.status_code, ret
+        except Exception as e:
+            print("Error retrieving page. Error: {}".format(e))
+            return ret.status_code, e
+
 
     def load_cgis(self):
         self.cgi_files = [
