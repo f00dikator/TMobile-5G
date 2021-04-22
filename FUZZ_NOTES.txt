@@ -6,6 +6,9 @@ GET requests URI
   - garbage is filtered out before the request is processed...e.g. ?<garbage>lan or ?lan<garbage> is identical response...garbage is filtered out then the request is processed
   - So, we can get around any IDS-ey type sigs by doing GET /whatever.cgi?<garbage>l<garbage>a<garbage>n<garbage> etc.
   - NOTE: THIS ONLY APPLIES TO THE ARGS TO THE RIGHT OF '?'....you can't insert garbage into the file name...only the parameters
+  - injecting chars doesn't change the HTTP status (200 OK), but it does affect the content that is delivered...so, 'whatever.cgi?;;lan;;' returns a 200 OK but no content. 'whatever.cgi?lan' returns a 200 and the full HTML content.
+
+HTTP 431 seems to get triggered when params go over 128 chars...
   
   
   
