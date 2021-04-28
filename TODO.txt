@@ -38,7 +38,9 @@ Brute crawl and find hidden directories/files (also may crash server...)
 
 Find all the POST pages and think about ways to break/inject/whatever 
 
-Since it broadcasts NETBIOS, let's try to talk back to it and see where this leads
+NETBIOS
+  - spoof DHCP
+  - immediately after the DHCP request, the requestIP will be sent a NETBIOS check
 
 Does it speak SSDP?
 
