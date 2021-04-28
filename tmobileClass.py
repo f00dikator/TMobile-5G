@@ -36,6 +36,27 @@ class tmobile:
             return ret.status_code, e
 
 
+    def post_page(self, url, post_data):
+        """
+        generic POST
+        :param url: string url (the portion after the POST command)
+        :param post_data: the POST data
+        :return: status_code, (requests-response|error string)
+        """
+
+        try:
+            full_path = "{}/{}".format(self.base_url, url)
+            #pdb.set_trace()
+            ret = self.session.post(url=full_path, data=post_data)
+            return ret.status_code, ret
+        except Exception as e:
+            print("Error retrieving page. Error: {}".format(e))
+            try:
+                return ret.status_code, e
+            except:
+                return "999", e
+
+
     def load_cgis(self):
         self.cgi_files = [
             "login_web_app.cgi",
