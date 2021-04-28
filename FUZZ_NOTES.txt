@@ -9,6 +9,8 @@ GET requests URI
   - injecting chars doesn't change the HTTP status (200 OK), but it does affect the content that is delivered...so, 'whatever.cgi?;;lan;;' returns a 200 OK but no content. 'whatever.cgi?lan' returns a 200 and the full HTML content.
 
 HTTP 431 seems to get triggered when params go over 128 chars...
+
+The endpoint login_web_app.cgi seems to use 0x2e (period) as a delimiter (in addition to &) for POST data
   
   
   
