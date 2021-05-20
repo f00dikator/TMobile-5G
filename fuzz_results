@@ -1,0 +1,18 @@
+using fuzz_http_login.c
+tcpdump in fuzz_http_login_pcap.pcap
+
+*****
+return buffer from scanned host just changed Counter=117466
+expected 568 return bytes...received 475 bytes
+DIFF Wed May 19 01:59:56 2021
+
+Offset 272: 0x33 -> 0x1a
+Offset 669: 0x47 -> 0xc2
+*****
+Unable to connect: Invalid argument
+DIFF Wed May 19 02:00:06 2021
+
+Offset 150: 0x6e -> 0xde
+Offset 464: 0x3d -> 0x3e
+Offset 534: 0x79 -> 0xa8
+
